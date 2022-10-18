@@ -26,7 +26,7 @@ defmodule FirehoseWeb.Router do
 
     get "/roll", RollController, :index
     get "/roll/:num_dice", RollController, :show
-    resources("/qutations", QuotationController, except: [:new, :edit])
+    resources("/quotations", QuotationController, except: [:new, :edit])
   end
 
   # Enables LiveDashboard only for development

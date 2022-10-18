@@ -49,7 +49,10 @@ defmodule FirehoseWeb.QuotationControllerTest do
   describe "update quotation" do
     setup [:create_quotation]
 
-    test "renders quotation when data is valid", %{conn: conn, quotation: %Quotation{id: id} = quotation} do
+    test "renders quotation when data is valid", %{
+      conn: conn,
+      quotation: %Quotation{id: id} = quotation
+    } do
       conn = put(conn, Routes.quotation_path(conn, :update, quotation), quotation: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 
